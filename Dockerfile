@@ -15,4 +15,4 @@ RUN pip install -r /opt/flaskapp/testapp/requirements.txt
 RUN mkdir /var/log/flaskapp/
 
 
-CMD ["python", "/opt/flaskapp/CTF_app_accept/routes.py"]
+CMD ["python", "/opt/flaskapp/testapp/routes.py"]
