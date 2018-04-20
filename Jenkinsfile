@@ -1,13 +1,11 @@
-agent none
-stages {
-    stage('Build') {
-        agent {
-            docker {
-                image 'python:2-alpine'
-            }
-        }
-        steps {
-            sh 'python routes.py'
-        }
-    }
+node {
+
+    stage('Clone repository')
+        git url: 'https://github.com/earnolddev/testapp.git'
+
+    stage('Build image')
+        docker.build("testapp")
+
+    stage ('deploy')
+        sh './deploy.sh'
 }
