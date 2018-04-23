@@ -1,11 +1,11 @@
 node {
-
-    stage('Clone repository')
+    stage('Clone repository') {
         git url: 'https://github.com/earnolddev/testapp.git'
-
-    stage('Build image')
+    }
+    stage('Build image') {
         docker.build("testapp")
-
-    stage ('deploy')
-        sh './deploy.sh'
+    }
+    stage ('deploy') {
+        sh 'bash deploy.sh'
+    }
 }
