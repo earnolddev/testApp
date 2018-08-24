@@ -1,9 +1,9 @@
 FROM centos:7
-RUN yum -y --setopt=tsflags=nodocs update && \
-    yum -y --setopt=tsflags=nodocs install python-setuptools && \
-    yum -y --setopt=tsflags=nodocs install python-devel && \
-    yum -y --setopt=tsflags=nodocs install gcc && \
-    yum -y --setopt=tsflags=nodocs install rpm-build && \
+RUN yum -y update && \
+    yum -y install python-setuptools && \
+    yum -y install python-devel && \
+    yum -y install gcc && \
+    yum -y install rpm-build && \
     yum clean all
 RUN easy_install pip
 
