@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request, redirect
-from flask_twisted import Twisted
 
 ###############################CONFIG#######################################
 app = Flask(__name__, static_folder='static', static_url_path='')
-twisted = Twisted(app)
 
 @app.route("/")
 def home():
