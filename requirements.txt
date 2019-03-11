@@ -1,8 +1,3 @@
 Flask==0.12.2
 Flask-Twisted==0.1.2
-itsdangerous==0.24
-Jinja2==2.10
 requests==2.18.4
-Twisted==16.4.1
-Werkzeug==0.14.1
-zope.interface==4.1.1
