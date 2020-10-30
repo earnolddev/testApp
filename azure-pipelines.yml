@@ -27,3 +27,18 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+          - task: QualysWASConnector@1
+            inputs:
+              webApplication: '268983027-testApp'
+              scanType: 'VULNERABILITY'
+              optionProfile: 'Other'
+              profileName: '1415216'
+              failBySeverity4: true
+              sev4: '1'
+              failBySeverity5: true
+              sev5: '1'
+              failwithAnyQIDs: true
+              qidlist: '150001'
+              dataCheckFrequency: '5'
+              waitTimeforScanResult: '60*24'
+              WasService: 'US2'
